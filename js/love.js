@@ -9,31 +9,13 @@ const questionString = [
   "デートしましたか",
   "ふとした時に、目が合いますか？",
   "共通の趣味がありますか？",
-  "あなたはがりがりだったり、太っていたりしますか？",
+  "あなたは普通の体型ですか？（がりがりだったり、太っていたりしない)",
   "二人で会話しているときに相手がよく笑っていますか？",
   "相談や恋愛の話をされたことがありますか？",
   "あなたと話しているときに、声のトーンが上がりますか？",
   "二人っきりでご飯を食べたことはありますか？",
   "出会ってから6か月以内ですか？",
 ];
-
-// class Question {
-//   makeQuestion(arrayQuestions) {
-//     /* arrayQuestions is expected like below
-//     const questionString = [
-//       "夜二人でLINEをしましたか？",
-//       "デートしましたか",
-//       "ふとした時に、目が合いますか？",]; */
-//     let questionsPlaceHtml = "";
-//     for (let index = 0; index < arrayQuestions.length; index++) {
-//       questionsPlaceHtml += `${arrayQuestions[index]}<br>`;
-//       console.log(arrayQuestions[index]);
-//     }
-
-//     let questionsPlace = document.getElementById("questions");
-//     questionsPlace.innerHTML = questionsPlaceHtml;
-//   }
-// }
 
 class Question {
   makeQuestion(arrayQuestions) {
@@ -45,13 +27,14 @@ class Question {
     let questionsPlaceHtml = "";
     for (let index = 0; index < arrayQuestions.length; index++) {
       questionsPlaceHtml += ` <form>
+      <p>Question${index + 1}</p>
       <p>${arrayQuestions[index]}</p>
       <label
         ><input type="radio" name="question" value="0.1" checked />いいえ</label
       >
       <label><input type="radio" name="question" value="0.4" />どちらでもない</label>
       <label><input type="radio" name="question" value="0.95" />はい</label>
-    </form>`;
+    </form><br>`;
       console.log(arrayQuestions[index]);
     }
 
@@ -87,7 +70,7 @@ class calcuProbability {
 class showScore {
   showScore(score) {
     const scorePlace = document.getElementById("score");
-    scorePlace.innerHTML = `${score}%`; //hard code hogehoge
+    scorePlace.innerHTML = `付き合える確率は、、、${score}%`; //hard code hogehoge
     return true;
   }
 }
