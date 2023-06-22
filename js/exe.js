@@ -16,6 +16,11 @@ button.addEventListener(
 
     const show = new showScore();
     show.showScore(score)
+
+    console.log(score);
+    const showAdvice = new advice()
+    showAdvice.showAdvice(score)
+    console.log(score)
   },
   false
 );
